@@ -1,4 +1,4 @@
-application: mytestapp
+application: testgaeappjcsiii
 module: backend
 version: uno
 runtime: go
