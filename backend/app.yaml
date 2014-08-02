@@ -1,0 +1,9 @@
+application: mytestapp
+module: backend
+version: uno
+runtime: go
+api_version: go1
+
+handlers:
+- url: /api
+  script: _go_app

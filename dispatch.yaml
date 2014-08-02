@@ -1,0 +1,8 @@
+application: mytestapp
+
+dispatch:
+  - url: "*/"
+    module: default
+
+  - url: "*/api"
+    module: backend
