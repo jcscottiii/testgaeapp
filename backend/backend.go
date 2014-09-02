@@ -5,6 +5,13 @@ import (
 	"net/http"
 )
 
+func BackendInit() {
+	// This is just a placeholder function so that the standalone can properly
+	// include this package. By being able to include this package, the init()
+	// function will be called in the beginning like with using appengine and
+	// register the handler(s).
+}
+
 func init() {
 	http.HandleFunc("/api", handler)
 }

@@ -6,19 +6,17 @@ import (
 	"net/http"
 
 	"github.com/jcscottiii/testgaeapp/config"
-
-	"appengine"
-	"appengine/urlfetch"
 )
 
+func FrontendInit() {
+	// This is just a placeholder function so that the standalone can properly
+	// include this package. By being able to include this package, the init()
+	// function will be called in the beginning like with using appengine and
+	// register the handler(s).
+}
+
 func handler(w http.ResponseWriter, r *http.Request) {
-	c := appengine.NewContext(r)
-	client := urlfetch.Client(c)
-	resp, err := client.Get(config.BaseURL + "/api")
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
-	}
+	resp, err := SimpleOutsideCall(r, &w, config.BaseURL)
 	response, err := ioutil.ReadAll(resp.Body)
 	resp.Body.Close()
 	if err != nil {
